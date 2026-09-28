@@ -1,0 +1,70 @@
+{
+    "info": {
+        "name": "Service API",
+        "_postman_id": "09eee699-4b31-4589-a321-e284d5b07aa7",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Index",
+            "request": {
+                "method": "GET",
+                "url": "{{base_url}}/api/services"
+            }
+        },
+        {
+            "name": "Store",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\": \"exemple\",\n    \"email\": \"exemple\",\n    \"subject\": \"exemple\",\n    \"message\": \"exemple\",\n    \"status\": \"exemple\"\n}"
+                },
+                "url": "{{base_url}}/api/services"
+            }
+        },
+        {
+            "name": "Show",
+            "request": {
+                "method": "GET",
+                "url": "{{base_url}}/api/services/1"
+            }
+        },
+        {
+            "name": "Update",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\": \"exemple\",\n    \"email\": \"exemple\",\n    \"subject\": \"exemple\",\n    \"message\": \"exemple\",\n    \"status\": \"exemple\"\n}"
+                },
+                "url": "{{base_url}}/api/services/1"
+            }
+        },
+        {
+            "name": "Destroy",
+            "request": {
+                "method": "DELETE",
+                "url": "{{base_url}}/api/services/1"
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost:8000"
+        }
+    ]
+}

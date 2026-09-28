@@ -1,0 +1,70 @@
+{
+    "info": {
+        "name": "Post API",
+        "_postman_id": "e19afbb8-988d-4e13-9644-d405f9ce8381",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Index",
+            "request": {
+                "method": "GET",
+                "url": "{{base_url}}/api/posts"
+            }
+        },
+        {
+            "name": "Store",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"user_id\": 1,\n    \"title\": \"exemple\",\n    \"content\": \"exemple\",\n    \"image\": \"exemple\",\n    \"published\": 1\n}"
+                },
+                "url": "{{base_url}}/api/posts"
+            }
+        },
+        {
+            "name": "Show",
+            "request": {
+                "method": "GET",
+                "url": "{{base_url}}/api/posts/1"
+            }
+        },
+        {
+            "name": "Update",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"user_id\": 1,\n    \"title\": \"exemple\",\n    \"content\": \"exemple\",\n    \"image\": \"exemple\",\n    \"published\": 1\n}"
+                },
+                "url": "{{base_url}}/api/posts/1"
+            }
+        },
+        {
+            "name": "Destroy",
+            "request": {
+                "method": "DELETE",
+                "url": "{{base_url}}/api/posts/1"
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "base_url",
+            "value": "http://localhost:8000"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+<?php
+declare(strict_types=1);
+
+namespace App\Http\Requests\Order;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class UpdateOrderRequest extends FormRequest
+{
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    public function rules(): array
+    {
+        return [
+            'user_id' => ['sometimes', 'nullable', 'integer', 'exists:users,id'],
+            'customer_name' => ['sometimes', 'string', 'max:255'],
+            'email' => ['sometimes', 'string', 'max:255'],
+            'phone' => ['sometimes', 'string', 'max:30'],
+            'address' => ['sometimes', 'string', 'max:255'],
+            'city' => ['sometimes', 'nullable', 'string', 'max:255'],
+            'country' => ['sometimes', 'nullable', 'string', 'max:255'],
+            'notes' => ['sometimes', 'nullable', 'string', 'max:65535'],
+            'status' => ['sometimes', 'string', 'max:255'],
+            'total' => ['sometimes', 'integer'],
+        ];
+    }
+}
